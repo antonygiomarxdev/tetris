@@ -1,0 +1,13 @@
+<div class="board-container">
+  <canvas #board class="board"></canvas>
+  <canvas #next class="next-piece"></canvas>
+</div>
+
+<div class="controls">
+  <button (click)="play()" [disabled]="gameStarted">Play</button>
+  <button (click)="pause()" [disabled]="!gameStarted || paused">Pause</button>
+  <button (click)="resetGame()">Restart</button>
+  <p *ngIf="gameStarted">Points: {{ points }}</p>
+  <p *ngIf="gameStarted">Level: {{ level }}</p>
+  <p *ngIf="gameStarted">Lines: {{ lines }}</p>
+</div>

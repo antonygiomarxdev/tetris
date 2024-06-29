@@ -3,10 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "serve:ssr:tetris": "node dist/tetris/server/server.mjs",
+    "start:tetris": "ng serve tetris -o",
+    "build:tetris": "ng build tetris",
+    "test:tetris": "ng test tetris",
+    "lint:tetris": "ng lint tetris",
+    "e2e:tetris": "ng e2e tetris",
+    "start:tetris2": "ng serve tetris2 -o",
+    "build:game-engine-lib": "ng build game-engine-lib --watch",
+    "test:game-engine-lib": "ng test game-engine-lib",
+    "lint:game-engine-lib": "ng lint game-engine-lib",
+    "e2e:game-engine-lib": "ng e2e game-engine-lib"
   },
   "private": true,
   "dependencies": {
@@ -18,20 +25,28 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
+    "ng-zzfx": "^0.0.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^18.0.6",
     "@angular/cli": "^18.0.4",
     "@angular/compiler-cli": "^18.0.0",
+    "@eslint/js": "^9.6.0",
     "@types/jasmine": "~5.1.0",
+    "eslint": "^9.6.0",
+    "globals": "^15.6.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.4.2"
+    "ng-packagr": "^18.0.0",
+    "prettier": "^3.3.2",
+    "typescript": "~5.4.2",
+    "typescript-eslint": "^7.14.1"
   }
 }
